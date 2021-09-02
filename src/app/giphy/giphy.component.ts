@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { GiphyService } from './giphy.service';
 @Component({
   selector: 'app-giphy',
@@ -35,7 +35,6 @@ export class GiphyComponent implements OnInit{
   getGifs(){
     return this.service.getGifs(this.offset).subscribe((data: any) => {
       this.gifList = this.gifList.concat(data.data);
-      console.log(this.gifList);
     });
   }
 
