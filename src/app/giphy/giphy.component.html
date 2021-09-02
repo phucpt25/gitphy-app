@@ -1,0 +1,26 @@
+<div id="giphy" (scroll)="onScroll($event)">
+    <div class="container">
+        <h2>Trending gif from GIPHY</h2>
+        <div class="form-control">
+            <input type="text" placeholder="Search for GIF" #key (keyup.enter)="searchGif(key.value)">
+        </div>
+        <div class="gif-info" *ngIf="gifInfo.status">
+            <figure>
+                <img src="{{gifInfo.url}}" alt="{{gifInfo.title}}">
+            </figure>
+            <div>
+                <p>Title: {{gifInfo.title}}</p>
+                <p>Author: {{gifInfo.author}}</p>
+                <p>Rating: {{gifInfo.raiting}}</p>
+            </div>
+        </div>
+        <ul>
+            <li *ngFor="let gif of gifList">
+                <a (click)="getGifInfo(gif)">
+                    <img class="{{gif.rating}}" src="{{gif.images.downsized.url}}" alt="{{gif.title}}">
+                </a>
+            </li>
+        </ul>
+        <p>Powered By GIPHY</p>
+    </div>
+</div>

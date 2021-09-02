@@ -1,0 +1,83 @@
+#giphy{
+    .container{
+        width: 100%;
+        max-width: 1140px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        animation: center;
+        h2, p{
+            color: #fff;
+            width: 100%;
+            text-align: center;
+        }
+        h2{
+            font-size: 42px;
+            font-weight: 900;
+        }
+        .form-control {
+            width: 100%;
+            input{
+                width: 100%;
+                padding: 5px 10px;
+                font-size: 20px;
+            }
+        }
+        .gif-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            width: 768px;
+            height: 500px;
+            figure{
+                width: calc(40% - 10px);
+                img{
+                    width: 100%;
+                }
+            }
+            >div {
+                flex: 1;
+                p {
+                    font-size: 19px;
+                    font-weight: 700;
+                    text-align: left;
+                }
+            }
+        }
+        >ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            list-style: none;
+            li {
+                text-align: center;
+                width: calc(100% /4 - 10px);
+                a {
+                    cursor: pointer;
+                    &:hover{
+                        img{
+                            box-shadow: 0 0 11px #CC4DB3; 
+                            transition: all 0.5s ease-in-out;
+                            &.q{
+                                box-shadow: 0 0 11px #00E5CB;
+                            }
+                            &.pg{
+                                box-shadow: 0 0 11px #19AFFF;
+                            }
+                            &.pg-13{
+                                box-shadow: 0 0 11px #FFC82D;
+                            }
+                        }
+                    }
+                    img{
+                        position: relative;
+                        width: 100%;
+                        border-radius: 5px;
+                    }
+                }
+            }
+        }
+    }
+}
